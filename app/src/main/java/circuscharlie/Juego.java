@@ -7,5 +7,10 @@ public class Juego {
     private String fechaDeLanzamiento;
     private int pegi;
 
-    
+    void abrirJuego(){}
+    void getNombre(){}
+
+    public String toString(){
+        return "";
+    }
 }
