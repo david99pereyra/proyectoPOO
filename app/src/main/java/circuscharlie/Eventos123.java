@@ -7,4 +7,6 @@ public class Eventos123 {
     public void crearPelotas(){}
     public void verificarColisiones(){}
     public void recompensas(){}
+
+    public void crearFondo(){}
 }
