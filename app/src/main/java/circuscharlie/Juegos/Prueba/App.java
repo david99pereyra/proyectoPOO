@@ -2,7 +2,7 @@ package circuscharlie.Juegos.Prueba;
 
 import java.awt.Graphics2D;
 
-import com.entropyinteractive.*;
+import com.entropyinteractive.JGame;
 
 import circuscharlie.Lanzador.Juego;
 
@@ -42,7 +42,7 @@ public class App extends Juego {
 
     @Override
     public void run() {
-        
+
     }
 
     
