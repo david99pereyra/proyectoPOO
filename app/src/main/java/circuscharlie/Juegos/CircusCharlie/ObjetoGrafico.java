@@ -1,65 +1,68 @@
 package circuscharlie.Juegos.CircusCharlie;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.nio.Buffer;
+
+import javax.imageio.ImageIO;
 
 public class ObjetoGrafico {
-    private int EjeX;
-    private int EjeY;
+    protected BufferedImage imagen = null;
+    
+    public double positionX = 0;
+    public double positionY = 0;
+
     private int velocidadX;
     private int velocidadY;
-    private Image imagen;
 
-
-    public int getEjeX() {
-        return this.EjeX;
+    public ObjetoGrafico(String filename){
+        try {
+            imagen = ImageIO.read(getClass().getResource(filename));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
-    public void setEjeX(int EjeX) {
-        this.EjeX = EjeX;
+    public int getWidth(){
+        return imagen.getWidth();
+    }
+    public int getHeight(){
+        return imagen.getHeight();
     }
 
-    public int getEjeY() {
-        return this.EjeY;
+    public void setPosition(int x,int y){
+        this.positionX = x;
+        this.positionY = y;
     }
 
-    public void setEjeY(int EjeY) {
-        this.EjeY = EjeY;
+    public double getX() {
+        return this.positionX;
+    }
+
+    public double getY() {
+        return this.positionY;
+    }
+
+    public void display(Graphics2D g2){
+        g2.drawImage(imagen, (int) this.positionX, (int) this.positionY, null);
     }
 
     public int getVelocidadX() {
         return this.velocidadX;
     }
-
     public void setVelocidadX(int velocidadX) {
         this.velocidadX = velocidadX;
     }
-
     public int getVelocidadY() {
         return this.velocidadY;
     }
-
     public void setVelocidadY(int velocidadY) {
         this.velocidadY = velocidadY;
     }
 
-    public Image getImagen() {
-        return this.imagen;
-    }
-
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
-    }
-
-    public void mover(){
-
-    }
-
     public boolean colisiona(){
         return true;
-    }
-
-    public void draw(Image imagen){
-
     }
 
     public void update(){

@@ -1,6 +1,10 @@
 package circuscharlie.Juegos.CircusCharlie;
 
+import com.entropyinteractive.JGame;
+
 public class App {
+    public static JGame frame;
+
     public String getGreeting() {
         return "Hola mundo!";
     }
