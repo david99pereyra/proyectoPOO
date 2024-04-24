@@ -2,8 +2,9 @@ package circuscharlie.Juegos.CircusCharlie;
 
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 
-public class Charlie extends ObjetoGrafico implements ObjetoMovible{
+public class Charlie extends ObjetoGrafico{
 
     private boolean onGround = false;
     private boolean saltando = false;
@@ -27,17 +28,16 @@ public class Charlie extends ObjetoGrafico implements ObjetoMovible{
 
 	public int PISO;
 
+    public BufferedImage charlie1, charlie2;
+
     private CircusCharlie cc;
 
-    public Charlie(String filename) {
-        //super(filename);
+    public Charlie() {
         this.cc = new CircusCharlie();
+        charlie1 = Utilidad.getImage("resources/imagenes/JuegoCircusCharlie/Generales/charlie.png");
+        charlie2 = Utilidad.getImage("resources/imagenes/JuegoCircusCharlie/Generales/charlie2.png");
     }
-    @Override
-    public void update(double delta) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
+    
     
     public void setPISO(int piso){this.PISO = piso;}
     public int getPISO(){return PISO;}
@@ -51,14 +51,14 @@ public class Charlie extends ObjetoGrafico implements ObjetoMovible{
     public void quieto(){estadoActual = ESTADO_QUIETO;}
     public void left(){
         velocityX = -4.0;
-        positionX += velocityX;
+        setPosicionX(this.getX() + velocityX);
         direccionActual = DIRECCION_IZQUIERDA;
         estadoActual = ESTADO_CAMINANDO;
         direccionAngulo = -1;
     }
     public void right(){
-        velocityX = -4.0;
-        positionX += velocityX;
+        velocityX = 4.0;
+        setPosicionX(this.getX() + velocityX);
         direccionActual = DIRECCION_DERECHA;
         estadoActual = ESTADO_CAMINANDO;
         direccionAngulo = 1;
@@ -66,22 +66,22 @@ public class Charlie extends ObjetoGrafico implements ObjetoMovible{
     
     public void update(double delta){
         velocityY += gravity;
-        positionY += velocityY;
+        setPosicionY(this.getY() + velocityY);
 
         Mundo m = Mundo.getInstance();
-
-        if((positionX+ (this.getWidth())) > m.getWidth()){
-            positionX = m.getWidth() - (this.getWidth());
+        
+        if((this.getX() + (this.getWidth())) > m.getWidth()){
+            setPosicionX( m.getWidth() - (this.getWidth()));
             velocityX *= -1;
         }
 
-        if (positionX < 0){
+        if (this.getX() < 0){
             velocityX *= -1  ;
-			positionX = 0;
+			setPosicionX(0);
         }
 
-        if(positionY > PISO){
-            positionY = PISO;
+        if(this.getY() > PISO){
+            setPosicionY(PISO);
             velocityY = 0.0;
             onGround = true;
             angulo = 0;
@@ -100,7 +100,7 @@ public class Charlie extends ObjetoGrafico implements ObjetoMovible{
         AffineTransform old = g2.getTransform();
         g2.transform(transform);
 
-        g2.drawImage(imagen, (int) this.positionX, (int) this.positionY, null);
+        g2.drawImage(imagen, (int) this.getX(), (int) this.getY(), null);
 
         g2.setTransform(old);
     }
