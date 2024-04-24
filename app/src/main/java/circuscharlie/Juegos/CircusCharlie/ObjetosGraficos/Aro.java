@@ -7,7 +7,7 @@ public abstract class Aro extends ObjetoGrafico{
     protected int velDesplazamiento = ARO_DESPLAZAMIENTO_NORMAL;
     
     public Aro(String filename) {
-        super(filename);
+       // super(filename);
         //TODO Auto-generated constructor stub
     }
 

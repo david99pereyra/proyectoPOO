@@ -19,14 +19,14 @@ public class GrupoDeAros<T> extends ObjetoGrafico {
     private ArrayList<T> getFormacionFila(int x, int y, TipoAro t){
         ArrayList<T> aros = new ArrayList<>();
         
-        for (int i = 0; i < new Random().nextInt(50) + 2; i++){
-            if (t == TipoAro.CHICO){
-                aros.add((T) new AroEnemigoChico(x, (y - 300) + 80 * i));
-            }
-            else if (t == TipoAro.GRANDE){
-                aros.add((T) new AroEnemigoGrande(x, (y - 400) + 80 * i));
-            }
-        }
+        // for (int i = 0; i < new Random().nextInt(50) + 2; i++){
+        //     if (t == TipoAro.CHICO){
+        //         aros.add((T) new AroEnemigoChico(x, (y - 300) + 80 * i));
+        //     }
+        //     else if (t == TipoAro.GRANDE){
+        //         aros.add((T) new AroEnemigoGrande(x, (y - 400) + 80 * i));
+        //     }
+        // }
         return aros;
     }
 
