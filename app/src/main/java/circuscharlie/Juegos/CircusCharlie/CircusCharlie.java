@@ -11,6 +11,12 @@ import com.entropyinteractive.JGame;
 public class CircusCharlie extends Juego{
     private ArrayList<Integer> puntaje_combo;
     private static JGame frame;
+
+    
+
+    public static void main(String[] args) {
+        
+    }
     
     public CircusCharlie(){
         setNombre("Circus Charlie");
