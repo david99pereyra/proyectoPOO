@@ -14,7 +14,7 @@ public class PongGame extends Juego {
         setVersion("1.0");
         setDescripcion("Juego de tenis 2D");
         setDesarrolladores("PDF, CJ y SF");
-        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/juegos/Pong.png")));
+        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/JuegoPong/Pong.png")));
         setImplementado(false);
     }
 
