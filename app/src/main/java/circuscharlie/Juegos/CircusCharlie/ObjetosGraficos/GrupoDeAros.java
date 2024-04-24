@@ -1,6 +1,8 @@
 package circuscharlie.Juegos.CircusCharlie.ObjetosGraficos;
 
 import circuscharlie.Juegos.CircusCharlie.ObjetoGrafico;
+import circuscharlie.Juegos.CircusCharlie.ObjetosGraficos.obstaculos.Aro;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
