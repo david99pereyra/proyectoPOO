@@ -1,5 +1,5 @@
 package circuscharlie.Juegos.CircusCharlie.ObjetosGraficos;
 
-public class Aros {
-    
+public enum TipoAro {
+    CHICO, GRANDE
 }

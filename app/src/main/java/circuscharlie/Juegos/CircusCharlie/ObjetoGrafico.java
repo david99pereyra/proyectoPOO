@@ -7,7 +7,7 @@ import java.nio.Buffer;
 
 import javax.imageio.ImageIO;
 
-public class ObjetoGrafico {
+public abstract class ObjetoGrafico {
     protected BufferedImage imagen = null;
     
     public double positionX = 0;
