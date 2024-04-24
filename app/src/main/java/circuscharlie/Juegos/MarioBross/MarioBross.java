@@ -12,7 +12,7 @@ public class MarioBross extends Juego{
         setVersion("1.0");
         setDescripcion("Juego de un Fontanero");
         setDesarrolladores("PDF, CJ y SF");
-        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/juegos/MarioBross.png")));
+        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/JuegoMarioBross/MarioBross.png")));
         setImplementado(false);
     }
 

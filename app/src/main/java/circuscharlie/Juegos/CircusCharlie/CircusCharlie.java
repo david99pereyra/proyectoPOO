@@ -21,6 +21,7 @@ public class CircusCharlie extends Juego{
     Charlie charlie;
     
 
+    
     public static void main(String[] args) {
         CircusCharlie game = new CircusCharlie();
         game.run(1.0 / 60.0);
@@ -33,7 +34,7 @@ public class CircusCharlie extends Juego{
         setVersion("1.0");
         setDescripcion("Juego sobre un Charlie y sus eventos en el circo");
         setDesarrolladores("PDF, CJ y SF");
-        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/juegos/CircusCharlie.png")));
+        setImagenPortada(new ImageIcon(this.getClass().getResource("/imagenes/JuegoCircusCharlie/CircusCharlie.png")));
         setImplementado(false);
     }
 
@@ -100,11 +101,17 @@ public class CircusCharlie extends Juego{
                 
             }
         };
+        frame.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        new Thread(() -> frame.run(fps)).start();
     }
 
     @Override
     public void run() {
-        JOptionPane.showMessageDialog(null, "El juego esta en desarrollo, tenga paciencia a los programadores 👉👈", "Success", JOptionPane.INFORMATION_MESSAGE);
+        CircusCharlie game = new CircusCharlie();
+        game.run(1.0 / 60.0);
+        System.exit(0);
+        
+        // JOptionPane.showMessageDialog(null, "El juego esta en desarrollo, tenga paciencia a los programadores 👉👈", "Success", JOptionPane.INFORMATION_MESSAGE);   
     }
 
     public void calculePuntos(){}
