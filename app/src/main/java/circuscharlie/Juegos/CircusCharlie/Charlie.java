@@ -30,8 +30,13 @@ public class Charlie extends ObjetoGrafico implements ObjetoMovible{
     private CircusCharlie cc;
 
     public Charlie(String filename) {
-        super(filename);
+        //super(filename);
         this.cc = new CircusCharlie();
+    }
+    @Override
+    public void update(double delta) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
     
     public void setPISO(int piso){this.PISO = piso;}
