@@ -10,7 +10,7 @@ import java.nio.Buffer;
 
 import javax.imageio.ImageIO;
 
-public abstract class ObjetoGrafico {
+public abstract class ObjetoGrafico implements ObjetoMovible{
     protected BufferedImage imagen = null;
     private Point2D.Double posicion = new Point2D.Double();
     private Dimension dimensiones;
@@ -98,12 +98,12 @@ public abstract class ObjetoGrafico {
     //     }
     // }
 
-    // public int getWidth(){
-    //     return imagen.getWidth();
-    // }
-    // public int getHeight(){
-    //     return imagen.getHeight();
-    // }
+    public int getWidth(){
+        return imagen.getWidth();
+    }
+    public int getHeight(){
+        return imagen.getHeight();
+    }
 
     // public void setPosition(int x,int y){
     //     this.positionX = x;
